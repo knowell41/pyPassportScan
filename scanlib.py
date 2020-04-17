@@ -107,6 +107,8 @@ class Scan:
             else:
                 wordList.append('{}'.format(text.description))
             i+=1
+    
+
         mrz_entry = {}
         for i in range(len(wordList)):
             mrz_entry[str(i)] = wordList[i]
