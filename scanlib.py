@@ -8,7 +8,6 @@ import pandas as pd
 
 ##Factor used to crop passport Image to retrive MRZ region##
 crop_factor = 0.223
-path_google_vision_api_credentials = "./key.json"
 ############################################################
 class Scan:
     def __init__(self, filepath):
@@ -23,7 +22,7 @@ class Scan:
 
     def convert(self, code):
 
-        data = pd.read_csv("~/web/api/passport/lib/ctrycode.csv")
+        data = pd.read_csv(str(os.getcwd()) +"/ctrycode.csv")
         val1 = ""
 
         for i in range(len(data)):
@@ -107,7 +106,7 @@ class Scan:
             else:
                 wordList.append('{}'.format(text.description))
             i+=1
-    
+
 
         mrz_entry = {}
         for i in range(len(wordList)):
